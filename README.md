@@ -1,2 +1,9 @@
 # Web_Projects
-A repo for all my small web projects.
+
+For all the minute projects you could think of:
+
+Square animation
+
+Sample web page
+
+Search bar
