@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <style>
+        /*style applicable everywhere*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /*style for the buttons*/
+        .btn {
+            display: inline-block;
+            background-color: blue;
+            color: white;
+            padding: 8px 30px;
+            margin: 30px 0;
+            border-radius: 30px;
+            transition: 0.5s;
+        }
+
+        .btn:hover {
+            background-color: darkblue;
+        }
+
+        /*Style for the account page*/
+        .account {
+            padding: 50px 0;
+            background: radial-gradient(#fff, lightgray);
+            height: 100vh;
+        }
+
+        .form-container {
+            background: #fff;
+            width: 300px;
+            height: 400px;
+            position: relative;
+            text-align: center;
+            padding: 20px 0;
+            margin: auto;
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .form-container span {
+            font-weight: bold;
+            padding: 0 10px;
+            color: #555;
+            cursor: pointer;
+            width: 100px;
+            display: inline-block;
+        }
+
+        .form-btn {
+            display: inline-block;
+        }
+
+        .form-container form {
+            max-width: 300px;
+            padding: 0 20px;
+            position: absolute;
+            top: 130px;
+            transition: 1s;
+        }
+
+        form input {
+            width: 100%;
+            height: 30px;
+            margin: 10px 0;
+            padding: 0 10px;
+            border: 1px solid #ccc;
+        }
+
+        form .btn {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        form .btn:focus {
+            outline: none;
+        }
+
+        #login {
+            left: -300px;
+        }
+
+        #signup {
+            left: 0;
+        }
+
+        #indicator {
+            width: 100px;
+            border: none;
+            background: blue;
+            height: 3px;
+            margin-top: 8px;
+            transition: 1s;
+            transform: translateX(100px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="account">
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="loginform()">Log In</span>
+                            <span onclick="signupform()">Sign Up</span>
+                            <hr id="indicator">
+                        </div>
+                        <form action="" id="login">
+                            <input type="text" name="username" id="" placeholder="Username">
+                            <input type="password" name="email" id="" placeholder="Password">
+                            <button type="submit" class="btn">Log In</button>
+                            <a href="">Forgot password</a>
+                        </form>
+                        <form action="signup.php" id="signup" method="post">
+                            <input type="text" name="uname" id="" placeholder="Username">
+                            <input type="email" name="email" id="" placeholder="Email">
+                            <input type="password" name="passcode" id="" placeholder="Password">
+                            <button type="submit" class="btn">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var login = document.getElementById("login");
+        var signup = document.getElementById("signup");
+        var indicator = document.getElementById("indicator");
+
+        function loginform() {
+            signup.style.transform = "translateX(300px)";
+            login.style.transform = "translateX(300px)";
+            indicator.style.transform = "translateX(0px)";
+        }
+
+        function signupform() {
+            signup.style.transform = "translateX(0px)";
+            login.style.transform = "translateX(0px)";
+            indicator.style.transform = "translateX(100px)";
+        }
+    </script>
+</body>
+
+</html>
